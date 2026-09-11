@@ -4,4 +4,4 @@ WORKDIR /usr/src/app
 
 COPY auditor.py .
 
-CMD ["python", "auditor.py"]=
+CMD ["python", "auditor.py"]
