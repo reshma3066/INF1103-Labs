@@ -16,8 +16,11 @@ while True:
         
         #Convert input to integer
         quantity = int(stock)
-        
         #Add to inventory
         inventory += quantity
+        
+        if inventory > 500:
+            print("Overstock Alert! Inventory exceeds 500 units.")
+            break
         
         
