@@ -17,6 +17,11 @@ def process_delivery(current_total, new_value):
     return current_total + new_value
 
 
+def calculate_tax(amount):
+    """Return 10% of this delivery's amount."""
+    return amount * 0.10
+
+
 def generate_report(total_units, failed_attempts):
     """Print the final inventory and rejected-entry summary."""
     print("Total Units Processed:", total_units)
@@ -27,6 +32,7 @@ def main():
     # Keep the program's changing state local to this function.
     inventory = 0
     failed_entries = 0
+    deliveries_processed = 0
 
     while True:
         try:
@@ -40,11 +46,15 @@ def main():
             break
 
         inventory = process_delivery(inventory, quantity)
+        tax = calculate_tax(quantity)
+        deliveries_processed += 1
+        print(f"Tax for this delivery: {tax:.2f}")
 
         if inventory > 500:
             print("Overstock Alert! Inventory exceeds 500 units.")
             break
 
+    print("Total Deliveries Processed:", deliveries_processed)
     generate_report(inventory, failed_entries)
 
 
