@@ -1,0 +1,107 @@
+﻿commit 5f1616473e2caa028a2d2ebb131ac1fcab2ac5c8
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Sat Sep 19 16:44:45 2026 +0800
+
+    Lab 3: add delivery tax calculation and delivery count
+
+commit cc9a565c6be5582bc883468051cff332043529c7
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Sat Sep 19 16:43:49 2026 +0800
+
+    Lab 3: extract delivery processing and summary report
+
+commit 044850558fd3da6e90cfefdcb6aef4661c889d7d
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Sat Sep 19 16:43:07 2026 +0800
+
+    Lab 3: extract input validation and keep counters local
+
+commit cdeac2fed54052374dddad74866d6be0174e35ec
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Sat Sep 19 16:41:04 2026 +0800
+
+    Lab 3: copy Week 2 auditor as starting point
+
+commit 37d99b47fb2b8f41da57dfa4e5d2bd58a09764c3
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 17:01:48 2026 +0800
+
+    Fix Dockerfile CMD
+
+commit 6eb3cbdd2909031ec896d8cd352f9c015041eefe
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 16:39:46 2026 +0800
+
+    Update auditor and Dockerfile
+
+commit 5c87b94eea53ee1a64c3764e223c6630e0491526
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 16:17:12 2026 +0800
+
+    Add git log
+
+commit 0c348fa8f75eac75a33fc01199720d5c0add6822
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 16:13:34 2026 +0800
+
+    Add Dockerfile
+
+commit d44392a702efc5461d77753195a7a878752ff38f
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 14:46:04 2026 +0800
+
+    Add final inventory report
+
+commit 11e20de36a2e4cdd2467f6d92f34fa9a8d5709a3
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 14:44:18 2026 +0800
+
+    Add overstock alert
+
+commit 44ca67e4c381e1840c746d4d4c4b06517b243121
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 14:43:02 2026 +0800
+
+    Add input tracking
+
+commit 981353b0b01158e0869d6b3fb1174a49a3ef4b93
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 14:36:18 2026 +0800
+
+    Add input validation
+
+commit 784db15fa88b9d0ee0cd914c978c6b4471614391
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 14:18:30 2026 +0800
+
+    Move auditor to L2 folder
+
+commit c0b7c091ac6400da411867ee3dd6e2130d182e8b
+Author: reshma3066 <2604005@sit.singaporetech.edu.sg>
+Date:   Fri Sep 11 14:07:08 2026 +0800
+
+    Stock quantity user input
+
+commit 17a398252a93bfbfb90af858808d5579bd1a0088
+Author: reshma <reshma3066@gmail.com>
+Date:   Fri Sep 4 16:30:56 2026 +0800
+
+    Fourth Post
+
+commit ea12555c945f7711050f309fcf53121c9021ebdb
+Author: reshma <reshma3066@gmail.com>
+Date:   Fri Sep 4 16:26:08 2026 +0800
+
+    Third Post
+
+commit 773b3d740bc8acd38ea538074714fe16098a20e5
+Author: reshma <reshma3066@gmail.com>
+Date:   Fri Sep 4 16:23:30 2026 +0800
+
+    Second Post
+
+commit c409e6eaff43d7a7df4c09188c37ab0a3bcc5853
+Author: reshma <reshma3066@gmail.com>
+Date:   Fri Sep 4 16:10:03 2026 +0800
+
+    First Post
