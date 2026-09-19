@@ -12,6 +12,17 @@ def get_valid_input():
     return int(stock)
 
 
+def process_delivery(current_total, new_value):
+    """Return the inventory total after adding one delivery."""
+    return current_total + new_value
+
+
+def generate_report(total_units, failed_attempts):
+    """Print the final inventory and rejected-entry summary."""
+    print("Total Units Processed:", total_units)
+    print("Number of Failed/Rejected Entries:", failed_attempts)
+
+
 def main():
     # Keep the program's changing state local to this function.
     inventory = 0
@@ -28,14 +39,13 @@ def main():
         if quantity == "quit":
             break
 
-        inventory += quantity
+        inventory = process_delivery(inventory, quantity)
 
         if inventory > 500:
             print("Overstock Alert! Inventory exceeds 500 units.")
             break
 
-    print("Total Units Processed:", inventory)
-    print("Number of Failed/Rejected Entries:", failed_entries)
+    generate_report(inventory, failed_entries)
 
 
 if __name__ == "__main__":
