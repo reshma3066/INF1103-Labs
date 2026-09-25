@@ -2,8 +2,7 @@ from pathlib import Path
 
 
 def load_inventory():
-    """Load the saved total and history, or start empty on the first run."""
-    # Keep the data file beside this script, wherever Python is run from.
+    """Read the saved total and transaction history, or start empty."""
     inventory_file = Path(__file__).with_name("inventory.txt")
 
     try:
@@ -72,7 +71,6 @@ def main():
             break
 
         inventory = process_delivery(inventory, quantity)
-        transaction_history.append(quantity)
         tax = calculate_tax(quantity)
         deliveries_processed += 1
         print(f"Tax for this delivery: {tax:.2f}")
@@ -81,7 +79,6 @@ def main():
             print("Overstock Alert! Inventory exceeds 500 units.")
             break
 
-    print("Transaction history:", transaction_history)
     print("Total Deliveries Processed:", deliveries_processed)
     generate_report(inventory, failed_entries)
 
