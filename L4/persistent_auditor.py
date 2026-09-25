@@ -21,6 +21,15 @@ def load_inventory():
         return 0, []
 
 
+def save_inventory(total, history):
+    """Save the total and comma-separated history beside this script."""
+    inventory_file = Path(__file__).with_name("inventory.txt")
+
+    with open(inventory_file, "w", encoding="utf-8") as file:
+        file.write(f"{total}\n")
+        file.write(",".join(str(amount) for amount in history) + "\n")
+
+
 def get_valid_input():
     """Return a non-negative integer or 'quit'; reject other input."""
     stock = input("Enter stock quantity (or type 'quit' to exit): ")
@@ -81,6 +90,9 @@ def main():
             print("Overstock Alert! Inventory exceeds 500 units.")
             break
 
+    # Both 'quit' and the overstock exit reach this write-back step.
+    save_inventory(inventory, transaction_history)
+    print("Inventory saved to inventory.txt.")
     print("Transaction history:", transaction_history)
     print("Total Deliveries Processed:", deliveries_processed)
     generate_report(inventory, failed_entries)
