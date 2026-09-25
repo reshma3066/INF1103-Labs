@@ -72,6 +72,7 @@ def main():
             break
 
         inventory = process_delivery(inventory, quantity)
+        transaction_history.append(quantity)
         tax = calculate_tax(quantity)
         deliveries_processed += 1
         print(f"Tax for this delivery: {tax:.2f}")
@@ -80,6 +81,7 @@ def main():
             print("Overstock Alert! Inventory exceeds 500 units.")
             break
 
+    print("Transaction history:", transaction_history)
     print("Total Deliveries Processed:", deliveries_processed)
     generate_report(inventory, failed_entries)
 
