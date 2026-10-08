@@ -97,3 +97,121 @@ def display_all(inventory):
             f"Price: ${product['price']:.2f} | Stock: {product['stock']}"
         )
     print("-" * 48)
+
+
+def save_inventory(inventory, filename=INVENTORY_FILE):
+    """Save all product details and transaction amounts as readable JSON."""
+    with open(filename, "w", encoding="utf-8") as file:
+        json.dump(inventory, file, indent=4, allow_nan=False)
+        file.write("\n")
+
+
+def read_number(prompt, whole_number=False):
+    """Keep asking until a valid, non-negative price or quantity is entered."""
+    while True:
+        try:
+            text = input(prompt)
+            value = int(text) if whole_number else float(text)
+            if value < 0 or (not whole_number and not math.isfinite(value)):
+                raise ValueError
+            return value
+        except ValueError:
+            kind = "whole number" if whole_number else "finite number"
+            print(f"Please enter a non-negative {kind}.")
+
+
+def main():
+    print("=" * 40)
+    print("INVENTORY MANAGEMENT SYSTEM")
+    print("=" * 40)
+    try:
+        inventory = load_inventory()
+    except (OSError, ValueError) as error:
+        print(f"Unable to load inventory: {error}")
+        print("Please fix inventory.json before restarting. File left unchanged.")
+        return 1
+
+    while True:
+        print("\n----------- MENU -----------")
+        print("1. Display All Products")
+        print("2. Add Product")
+        print("3. Update Stock")
+        print("4. Search Product")
+        print("5. Save Inventory")
+        print("6. Exit")
+        print("----------------------------")
+
+        try:
+            option = input("\nEnter option: ").strip()
+            if option == "1":
+                display_all(inventory)
+            elif option == "2":
+                print("\nAdd New Product")
+                product_id = input("Product ID: ").strip()
+                if not product_id:
+                    raise ValueError("Product ID cannot be empty.")
+                if search_product(inventory, product_id) is not None:
+                    raise ValueError("A product with this ID already exists.")
+                name = input("Product Name: ").strip()
+                if not name:
+                    raise ValueError("Product name cannot be empty.")
+                price = read_number("Price: ")
+                stock = read_number("Stock Quantity: ", whole_number=True)
+                add_product(inventory, product_id, name, price, stock)
+                print("\nProduct added successfully!")
+            elif option == "3":
+                print("\nUpdate Stock")
+                product_id = input("Enter Product ID: ")
+                product = search_product(inventory, product_id)
+                if product is None:
+                    print("\nProduct not found.")
+                    continue
+                print("\nProduct Found:")
+                print(f"Name: {product['name']}")
+                print(f"Current Stock: {product['stock']}")
+                stock = read_number("\nNew Stock Quantity: ", whole_number=True)
+                update_stock(inventory, product_id, stock)
+                print("\nStock updated successfully!")
+            elif option == "4":
+                print("\nSearch Product")
+                product = search_product(inventory, input("Enter Product ID: "))
+                if product is None:
+                    print("\nProduct not found.")
+                    continue
+                print("\nProduct Found")
+                print("-" * 48)
+                print(f"ID: {product['id']}")
+                print(f"Name: {product['name']}")
+                print(f"Price: ${product['price']:.2f}")
+                print(f"Stock: {product['stock']}")
+                print("-" * 48)
+            elif option == "5":
+                print("\nSaving inventory...")
+                save_inventory(inventory)
+                print("Inventory saved successfully to inventory.json.")
+            elif option == "6":
+                print("\nSaving inventory before exit...")
+                save_inventory(inventory)
+                print("Inventory saved successfully.")
+                print("\nThank you for using Inventory Management System.")
+                print("Program terminated.")
+                return 0
+            else:
+                print("Invalid option. Please choose 1 to 6.")
+        except ValueError as error:
+            print(error)
+        except OSError as error:
+            print(f"Unable to save inventory: {error}. Please try saving again.")
+        except (EOFError, KeyboardInterrupt):
+            print("\nInput ended. Saving inventory before exit...")
+            try:
+                save_inventory(inventory)
+            except OSError as error:
+                print(f"Unable to save inventory: {error}")
+                return 1
+            print("Inventory saved successfully. Program terminated.")
+            return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
