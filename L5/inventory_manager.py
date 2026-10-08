@@ -1,6 +1,48 @@
 """Week 5: manage a list of product dictionaries and save it as JSON."""
 
+import json
 import math
+from pathlib import Path
+
+
+INVENTORY_FILE = Path(__file__).with_name("inventory.json")
+
+
+def load_inventory(filename=INVENTORY_FILE):
+    """Load product dictionaries; a missing file starts an empty inventory."""
+    path = Path(filename)
+    if not path.exists():
+        print("inventory.json not found. Starting with an empty inventory.")
+        return []
+
+    print("inventory.json found.")
+    with open(path, "r", encoding="utf-8") as file:
+        inventory = json.load(file)
+
+    if not isinstance(inventory, list):
+        raise ValueError("Inventory must be a list of product dictionaries.")
+    checked = []
+    for product in inventory:
+        if not isinstance(product, dict):
+            raise ValueError("Each product must be a dictionary.")
+        if not all(key in product for key in ("id", "name", "price", "stock")):
+            raise ValueError("Each product needs id, name, price and stock.")
+        if not isinstance(product["id"], str) or not isinstance(product["name"], str):
+            raise ValueError("Product ID and name must be text.")
+        if type(product["price"]) not in (int, float):
+            raise ValueError("Product price must be a number.")
+        add_product(checked, product["id"], product["name"],
+                    product["price"], product["stock"])
+        # Older JSON files without history begin with their current stock.
+        history = product.get("transactions", [product["stock"]])
+        if (not isinstance(history, list)
+                or any(type(amount) is not int for amount in history)
+                or sum(history) != product["stock"]):
+            raise ValueError("Transaction amounts must be integers summing to stock.")
+        checked[-1]["transactions"] = history
+
+    print("Inventory loaded successfully.")
+    return checked
 
 
 def search_product(inventory, product_id):
