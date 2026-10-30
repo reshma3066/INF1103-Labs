@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1820" height="1015" viewBox="0 0 1820 1015" role="img" aria-labelledby="title description">
+  <title id="title">Lab 6 UML class diagram: Product and Inventory</title>
+  <desc id="description">Two three-compartment class boxes show Product and Inventory with private attributes, public initializers, getters and operations. A plain association states that Inventory contains Product objects.</desc>
+  <rect width="1820" height="1015" fill="#ffffff" />
+  <text x="60" y="67" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#15283d">Inventory management system</text>
+  <text x="60" y="103" font-family="Arial, sans-serif" font-size="20" fill="#4b5d70">INF1103 · Lab 6 · Week 8 object-oriented design</text>
+  <rect x="60" y="150" width="830" height="720" fill="#ffffff" stroke="#233c55" stroke-width="2" />
+  <rect x="61" y="151" width="828" height="65" fill="#233c55" />
+  <text x="475" y="193" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="#ffffff">Product</text>
+  <line x1="60" y1="217" x2="890" y2="217" stroke="#233c55" stroke-width="2" />
+  <g font-family="Courier, monospace" font-size="20" fill="#172b40">
+    <text x="84" y="255">- __product_id : String</text>
+    <text x="84" y="288">- __name : String</text>
+    <text x="84" y="321">- __price : float</text>
+    <text x="84" y="354">- __stock : int</text>
+    <text x="84" y="387">- __transactions : List[int]</text>
+  </g>
+  <line x1="60" y1="415" x2="890" y2="415" stroke="#233c55" stroke-width="2" />
+  <g font-family="Courier, monospace" font-size="20" fill="#172b40">
+    <text x="84" y="455">+ __init__(product_id : String, name : String,</text>
+    <text x="120" y="486">price : float, stock : int,</text>
+    <text x="120" y="517">transactions : List[int] or None = None) : void</text>
+    <text x="84" y="565">+ get_product_id() : String</text>
+    <text x="84" y="604">+ get_name() : String</text>
+    <text x="84" y="643">+ get_price() : float</text>
+    <text x="84" y="682">+ get_stock() : int</text>
+    <text x="84" y="721">+ get_transactions() : List[int]</text>
+    <text x="84" y="760">+ update_stock(quantity : int) : void</text>
+    <text x="84" y="799">+ display_information() : void</text>
+  </g>
+  <rect x="1110" y="150" width="650" height="720" fill="#ffffff" stroke="#233c55" stroke-width="2" />
+  <rect x="1111" y="151" width="648" height="65" fill="#233c55" />
+  <text x="1435" y="193" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" font-weight="bold" fill="#ffffff">Inventory</text>
+  <line x1="1110" y1="217" x2="1760" y2="217" stroke="#233c55" stroke-width="2" />
+  <text x="1134" y="255" font-family="Courier, monospace" font-size="20" fill="#172b40">- __products : List[Product]</text>
+  <line x1="1110" y1="415" x2="1760" y2="415" stroke="#233c55" stroke-width="2" />
+  <g font-family="Courier, monospace" font-size="20" fill="#172b40">
+    <text x="1134" y="455">+ __init__() : void</text>
+    <text x="1134" y="505">+ add_product(product : Product) : void</text>
+    <text x="1134" y="555">+ search_product(product_id : String)</text>
+    <text x="1170" y="586">: Product or None</text>
+    <text x="1134" y="636">+ update_stock(product_id : String,</text>
+    <text x="1170" y="667">quantity : int) : void</text>
+    <text x="1134" y="717">+ display_all() : void</text>
+    <text x="1134" y="767">+ get_products() : List[Product]</text>
+  </g>
+  <line x1="890" y1="345" x2="1110" y2="345" stroke="#233c55" stroke-width="2" />
+  <text x="1000" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#233c55">contains</text>
+  <text x="60" y="924" font-family="Arial, sans-serif" font-size="19" fill="#4b5d70">- private attribute     + public method     void: no return value     List[T]: list of T objects</text>
+  <text x="60" y="961" font-family="Arial, sans-serif" font-size="19" fill="#4b5d70">Stock updates set the new total; transaction history records the signed change. List getters return copies.</text>
+</svg>

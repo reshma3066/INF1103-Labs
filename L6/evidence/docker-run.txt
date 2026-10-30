@@ -1,0 +1,113 @@
+﻿========================================
+OOP INVENTORY MANAGEMENT SYSTEM
+========================================
+Inventory loaded successfully.
+
+----------- MENU -----------
+1. Display All Products
+2. Add Product
+3. Update Stock
+4. Search Product
+5. Save Inventory
+6. Exit
+----------------------------
+
+Enter option: 1
+
+Current Inventory
+------------------------------------------------
+ID: P001 | Name: Laptop | Price: $1200.00 | Stock: 15
+ID: P002 | Name: Mouse | Price: $25.50 | Stock: 45
+ID: P003 | Name: Keyboard | Price: $45.00 | Stock: 25
+ID: P004 | Name: Monitor | Price: $299.99 | Stock: 10
+------------------------------------------------
+
+----------- MENU -----------
+1. Display All Products
+2. Add Product
+3. Update Stock
+4. Search Product
+5. Save Inventory
+6. Exit
+----------------------------
+
+Enter option: 2
+P005
+Webcam
+79.90
+8
+3
+P002
+50
+5
+4
+P005
+
+Add New Product
+Product ID: Product Name: Price: Stock Quantity: Product added successfully!
+
+----------- MENU -----------
+1. Display All Products
+2. Add Product
+3. Update Stock
+4. Search Product
+5. Save Inventory
+6. Exit
+----------------------------
+
+Enter option: 
+Update Stock
+Enter Product ID: Name: Mouse
+Current Stock: 45
+New Stock Quantity: Stock updated successfully!
+
+----------- MENU -----------
+1. Display All Products
+2. Add Product
+3. Update Stock
+4. Search Product
+5. Save Inventory
+6. Exit
+----------------------------
+
+Enter option: Inventory saved successfully to inventory.json.
+
+----------- MENU -----------
+1. Display All Products
+2. Add Product
+3. Update Stock
+4. Search Product
+5. Save Inventory
+6. Exit
+----------------------------
+
+Enter option: 
+Search Product
+Enter Product ID: Product Found:
+ID: P005 | Name: Webcam | Price: $79.90 | Stock: 8
+
+----------- MENU -----------
+1. Display All Products
+2. Add Product
+3. Update Stock
+4. Search Product
+5. Save Inventory
+6. Exit
+----------------------------
+
+Enter option: 4
+
+Search Product
+Enter Product ID: P002
+Product Found:
+ID: P002 | Name: Mouse | Price: $25.50 | Stock: 50
+
+----------- MENU -----------
+1. Display All Products
+2. Add Product
+3. Update Stock
+4. Search Product
+5. Save Inventory
+6. Exit
+----------------------------
+

@@ -1,0 +1,1 @@
+﻿running | inf1103-labs-smart-auditor | ["python","-B","main.py"] | [{"Type":"bind","Source":"C:\\Users\\reshm\\OneDrive\\T1 AY2026\\INF1103 - Labs\\L6","Destination":"/app","Mode":"","RW":true,"Propagation":"rprivate"}]
