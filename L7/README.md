@@ -75,23 +75,23 @@ docker run --rm -it --mount "type=bind,source=$((Resolve-Path ./L7).Path),target
 The bind mount makes interactive inventory changes persist in your local L7
 folder. Without a bind mount, changes in a `--rm` container disappear on exit.
 
-## Git and submission steps still to do
+## Git and submission evidence
 
-The lab sheet requests committing, pushing and screenshots. These have not been
-performed as part of this local implementation. Unrelated changes already exist
-in L2, L4 and L5, so stage only the lab files and the root ignore file:
+Lab 7 was committed and published to `reshma3066/INF1103-Labs` on `main`.
+The command-line push required credentials, so publication used the authenticated
+GitHub connector. A subsequent `git fetch` verified the published commit. The
+identical local tree was aligned with the published commit; the original local
+commit remains on `lab7-local-backup`. Changes in L2, L4 and L5 were excluded.
 
-```powershell
-git status
-git add -- L7 .gitignore
-git diff --cached
-git commit -m "Lab 7: add inheritance, abstraction and shipping interface"
-git push
-git log -5 --oneline
-```
+The `evidence` folder contains actual Docker build, test and program logs plus
+Git verification output. The JPG screenshots show these logs in Notepad; they
+are screenshots of saved command output, not an interactive terminal session.
+The Docker test screenshot shows all 9 tests passing. The program screenshot
+shows both product types and the physical product's shipping calculation.
 
-Capture screenshots of your actual Git and Docker workflow for submission.
-The supplied verification notes are text evidence, not screenshots.
+The submission ZIP contains this L7 folder, including code, tests, UML source,
+sample JSON, Docker files, explanations, logs and screenshots. It excludes
+Python caches, temporary tooling, Git internals and other labs.
 
 ## Optional reflection: extending the system
 

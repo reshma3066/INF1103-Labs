@@ -25,5 +25,11 @@ An initial sandboxed Windows test run encountered permission errors accessing
 temporary directories. Running with the required filesystem access passed all
 tests; Docker tests also passed. This was an environment access issue.
 
-Git status and existing history were inspected. No commit, push or workflow
-screenshot was produced. Follow the README for those submission steps.
+Submission preparation reran the Docker build, tests and program successfully.
+The latest test run passed all 9 tests in 0.075 seconds; see the raw logs in
+`evidence`. JPG screenshots show the saved command output in Notepad.
+
+Source commit `ad3c82e` was published to GitHub through the authenticated connector
+after the command-line push required sign-in. `git fetch` verified the published
+commit. The original local commit `c017ba2` is preserved on `lab7-local-backup`.
+Submission evidence and updated documentation are included in a follow-up commit.

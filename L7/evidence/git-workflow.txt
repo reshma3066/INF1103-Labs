@@ -1,0 +1,23 @@
+INF1103 Lab 7 - actual command output - 6 November 2026
+
+> git log -2 --oneline --decorate
+ad3c82e (HEAD -> main, origin/main, origin/HEAD) Lab 7: implement product inheritance, abstraction and shipping
+0b610f1 Lab 6: save Git log for submission
+[exit code: 0]
+
+> git remote -v
+origin	https://github.com/reshma3066/INF1103-Labs.git (fetch)
+origin	https://github.com/reshma3066/INF1103-Labs.git (push)
+[exit code: 0]
+
+> git rev-parse HEAD origin/main
+ad3c82e27b75cac96c7f1f2ed6313f75ac8dee94
+ad3c82e27b75cac96c7f1f2ed6313f75ac8dee94
+[exit code: 0]
+
+> git diff --exit-code HEAD origin/main
+[exit code: 0]
+
+Publication note: Git CLI required sign-in. The authenticated GitHub
+connector published the commit; git fetch verified it. The matching
+HEAD and origin/main hashes above confirm the source is synchronized.

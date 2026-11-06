@@ -1,0 +1,38 @@
+INF1103 Lab 7 - actual command output - 6 November 2026
+
+> git status --short -- L7 .gitignore
+A  .gitignore
+A  L7/.dockerignore
+A  L7/.gitignore
+A  L7/Dockerfile
+A  L7/README.md
+A  L7/can_be_shipped.py
+A  L7/class_diagram.md
+A  L7/digital_product.py
+A  L7/evidence/docker-build.txt
+A  L7/evidence/docker-program.txt
+A  L7/evidence/docker-tests.txt
+A  L7/file_handling.py
+A  L7/inventory.json
+A  L7/inventory.py
+A  L7/main.py
+A  L7/physical_product.py
+A  L7/product.py
+A  L7/test_inventory.py
+A  L7/validation.py
+A  L7/verification.md
+[exit code: 0]
+
+> git add -- L7 .gitignore
+[exit code: 0]
+
+> git diff --cached --check -- . :!L7/evidence/*
+[exit code: 0]
+
+> git commit --quiet -m "Lab 7: implement product inheritance, abstraction and shipping"
+[exit code: 0]
+
+> git log -1 --oneline
+c017ba2 Lab 7: implement product inheritance, abstraction and shipping
+[exit code: 0]
+
