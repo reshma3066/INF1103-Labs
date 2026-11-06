@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+evidence/
+*.png
+*.svg
+*.md
+log.txt

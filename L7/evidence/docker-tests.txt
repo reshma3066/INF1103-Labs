@@ -1,0 +1,22 @@
+INF1103 Lab 7 - actual command output - 6 November 2026
+
+> docker run --rm inf1103-lab7 python -m unittest -v
+test_abstract_contracts (test_inventory.Lab7Tests.test_abstract_contracts) ... ok
+test_display_and_fulfilment (test_inventory.Lab7Tests.test_display_and_fulfilment) ... ok
+test_invalid_files_are_not_overwritten (test_inventory.Lab7Tests.test_invalid_files_are_not_overwritten) ... ok
+test_inventory_and_encapsulation (test_inventory.Lab7Tests.test_inventory_and_encapsulation) ... ok
+test_menu_add_both_types_update_search_save_and_restart (test_inventory.Lab7Tests.test_menu_add_both_types_update_search_save_and_restart) ... Inventory loaded successfully.
+ok
+test_missing_file_starts_empty (test_inventory.Lab7Tests.test_missing_file_starts_empty) ... Inventory file not found. Starting with an empty inventory.
+ok
+test_roundtrip_in_new_python_process (test_inventory.Lab7Tests.test_roundtrip_in_new_python_process) ... Inventory loaded successfully.
+ok
+test_shipping_for_different_weights (test_inventory.Lab7Tests.test_shipping_for_different_weights) ... ok
+test_validation (test_inventory.Lab7Tests.test_validation) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.075s
+
+OK
+[exit code: 0]
+
